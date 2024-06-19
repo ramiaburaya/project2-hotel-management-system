@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: 'mysql:8'
+    container_name: 'hotelManG-mysql'
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_DATABASE=hotel_management'
+      - 'MYSQL_PASSWORD=root'
+    ports:
+      - '127.0.0.1:3307:3306'
+    volumes:
+      - 'D:\Mysql\HotelManegment\docker\Mysql:/var/lib/mysql'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: '30s'
+      timeout: '10s'
+      retries: 5
