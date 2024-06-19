@@ -3,6 +3,7 @@ package com.example.hotelmangment.config;
 import com.example.hotelmangment.JWT.JwtAuthFilter;
 import com.example.hotelmangment.User.Service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +28,8 @@ public class SecurityConfig {
 
     @Autowired
     private JwtAuthFilter jwtAuthFilter;
-
+    @Value("${security.public-endpoints}")
+    private String[] publicEndpoints;
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsServiceImpl();
@@ -38,7 +40,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user/login", "/api/customer/register", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+                        .requestMatchers(publicEndpoints).permitAll()
                         .requestMatchers("/api/**").authenticated()
                 )
                 .sessionManagement(session -> session

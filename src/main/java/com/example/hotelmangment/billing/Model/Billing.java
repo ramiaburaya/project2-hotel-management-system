@@ -46,12 +46,10 @@ public class Billing {
 
     @Column(name = "created_at", nullable = false)
     @NotNull
-    @Schema(description = "Timestamp when the billing record was created", required = true, example = "2024-06-19T12:00:00Z")
     private Timestamp createdAt;
 
     @Column(name = "updated_at", nullable = false)
     @NotNull
-    @Schema(description = "Timestamp when the billing record was last updated", required = true, example = "2024-06-19T12:00:00Z")
     private Timestamp updatedAt;
 
     @PrePersist

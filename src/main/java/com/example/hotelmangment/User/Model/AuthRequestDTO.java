@@ -1,4 +1,4 @@
-package com.example.hotelmangment.User;
+package com.example.hotelmangment.User.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
