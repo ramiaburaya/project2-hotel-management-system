@@ -16,9 +16,7 @@ This project is a comprehensive Hotel Management System developed using Spring B
 
 ### Student Names
 
-- Student 1: [Name]
-- Student 2: [Name]
-- Student 3: [Name]
+- Student 1: Rami Aburayya - 1201782
 
 ## ER Diagram
 
