@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -51,7 +52,7 @@ public class ReservationController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_CUSTOMER')")
     public ResponseEntity<Reservation> updateReservation(
             @Parameter(description = "ID of the reservation to be updated", required = true) @PathVariable Long id,
-            @Parameter(description = "Updated reservation object", required = true) @RequestBody Reservation reservation) {
+            @Parameter(description = "Updated reservation object", required = true) @RequestBody @Valid Reservation reservation) {
         Reservation updatedReservation = reservationService.updateReservation(id, reservation);
         return ResponseEntity.ok(updatedReservation);
     }
@@ -130,7 +131,7 @@ public class ReservationController {
     @GetMapping("/status/{status}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Reservation>> getReservationsByStatus(
-            @Parameter(description = "Status of the reservations to be retrieved", required = true) @PathVariable ReservationStatus status) {
+            @Parameter(description = "Status of the reservations to be retrieved", required = true) @PathVariable @Valid ReservationStatus status) {
         List<Reservation> reservations = reservationService.getReservationsByStatus(status);
         return ResponseEntity.ok(reservations);
     }

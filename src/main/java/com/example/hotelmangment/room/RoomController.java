@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +33,7 @@ public class RoomController {
     })
     @PostMapping
     public ResponseEntity<Room> createRoom(
-            @Parameter(description = "Room object to be created", required = true) @RequestBody  Room room) {
+            @Parameter(description = "Room object to be created", required = true) @RequestBody @Valid  Room room) {
         Room createdRoom = roomService.createRoom(room);
         return ResponseEntity.ok(createdRoom);
     }
@@ -46,7 +47,7 @@ public class RoomController {
     @PutMapping("/{id}")
     public ResponseEntity<Room> updateRoom(
             @Parameter(description = "ID of the room to be updated", required = true) @PathVariable Long id,
-            @Parameter(description = "Updated room object", required = true) @RequestBody  Room room) {
+            @Parameter(description = "Updated room object", required = true) @RequestBody @Valid Room room) {
         Room updatedRoom = roomService.updateRoom(id, room);
         return ResponseEntity.ok(updatedRoom);
     }
@@ -92,7 +93,7 @@ public class RoomController {
     })
     @GetMapping("/status/{status}")
     public ResponseEntity<List<Room>> getRoomsByStatus(
-            @Parameter(description = "Status of the rooms to be retrieved", required = true) @PathVariable RoomStatus status) {
+            @Parameter(description = "Status of the rooms to be retrieved", required = true) @PathVariable @Valid RoomStatus status) {
         List<Room> rooms = roomService.getRoomsByStatus(status);
         return ResponseEntity.ok(rooms);
     }
@@ -104,7 +105,7 @@ public class RoomController {
     })
     @GetMapping("/type/{roomType}")
     public ResponseEntity<List<Room>> getRoomsByType(
-            @Parameter(description = "Type of the rooms to be retrieved", required = true) @PathVariable RoomType roomType) {
+            @Parameter(description = "Type of the rooms to be retrieved", required = true) @PathVariable @Valid RoomType roomType) {
         List<Room> rooms = roomService.getRoomsByType(roomType);
         return ResponseEntity.ok(rooms);
     }

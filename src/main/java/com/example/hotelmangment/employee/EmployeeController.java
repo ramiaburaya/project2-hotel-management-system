@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -87,7 +88,7 @@ public class EmployeeController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Employee> updateEmployee(
             @Parameter(description = "ID of the employee to be updated", required = true) @PathVariable Long id,
-            @Parameter(description = "Updated employee object", required = true) @RequestBody Employee employeeDetails) {
+            @Parameter(description = "Updated employee object", required = true) @RequestBody @Valid Employee employeeDetails) {
         Employee updatedEmployee = employeeService.updateEmployee(id, employeeDetails);
         return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }

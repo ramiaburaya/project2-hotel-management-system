@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -60,7 +61,7 @@ public class HousekeepingController {
     @PostMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Housekeeping> createHousekeepingTask(
-            @Parameter(description = "Housekeeping object to be created", required = true) @RequestBody  Housekeeping housekeeping) {
+            @Parameter(description = "Housekeeping object to be created", required = true) @RequestBody @Valid  Housekeeping housekeeping) {
         Housekeeping newTask = housekeepingService.createHousekeepingTask(housekeeping);
         return new ResponseEntity<>(newTask, HttpStatus.CREATED);
     }
@@ -76,7 +77,7 @@ public class HousekeepingController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Housekeeping> updateHousekeepingTask(
             @Parameter(description = "ID of the housekeeping task to be updated", required = true) @PathVariable Long id,
-            @Parameter(description = "Updated housekeeping object", required = true) @RequestBody Housekeeping housekeeping) {
+            @Parameter(description = "Updated housekeeping object", required = true) @RequestBody @Valid Housekeeping housekeeping) {
         Housekeeping updatedTask = housekeepingService.updateHousekeepingTask(id, housekeeping);
         return new ResponseEntity<>(updatedTask, HttpStatus.OK);
     }

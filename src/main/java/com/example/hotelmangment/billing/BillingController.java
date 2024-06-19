@@ -35,7 +35,7 @@ public class BillingController {
     })
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Billing> createBilling(
-            @Parameter(description = "Billing object to be created", required = true) @RequestBody Billing billing) {
+            @Parameter(description = "Billing object to be created", required = true) @RequestBody @Valid Billing billing) {
         Billing createdBilling = billingService.createBilling(billing);
         return ResponseEntity.ok(createdBilling);
     }
@@ -51,7 +51,7 @@ public class BillingController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Billing> updateBilling(
             @Parameter(description = "ID of the billing record to be updated", required = true) @PathVariable Long id,
-            @Parameter(description = "Updated billing object", required = true) @RequestBody Billing billing) {
+            @Parameter(description = "Updated billing object", required = true) @RequestBody @Valid Billing billing) {
         Billing updatedBilling = billingService.updateBilling(id, billing);
         return ResponseEntity.ok(updatedBilling);
     }
