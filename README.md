@@ -20,7 +20,7 @@ This project is a comprehensive Hotel Management System developed using Spring B
 
 ## ER Diagram
 
-![ER Diagram](path/to/your/er-diagram.png)
+![ER Diagram](ERD.png)
 
 ## Building, Packaging, and Running the Application
 
