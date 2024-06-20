@@ -71,7 +71,7 @@ To build and run the application as a Docker container:
 
 ### DockerHub
 
-The Docker image is available on DockerHub: [DockerHub Link](https://hub.docker.com/r/your-dockerhub-username/hotel-management-system)
+The Docker image is available on DockerHub: [DockerHub Link]([https://hub.docker.com/r/your-dockerhub-username/hotel-management-system](https://hub.docker.com/r/ramiaburaya/hotel-management-app))
 
 ## What We Have Learned
 
