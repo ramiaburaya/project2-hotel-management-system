@@ -15,3 +15,14 @@ services:
       interval: '30s'
       timeout: '10s'
       retries: 5
+  app:
+    image: ramiaburaya/hotel-management-app:latest
+    container_name: hotel_management_app
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/hotel_management
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - '8080:8080'
