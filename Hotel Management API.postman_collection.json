@@ -1,0 +1,5423 @@
+{
+	"info": {
+		"_postman_id": "d2052d77-dc8c-4698-826e-46167336a77a",
+		"name": "Hotel Management API",
+		"description": "API documentation for the Hotel Management system\n\nContact Support:\n Name: Rami Aburayya\n Email: ramiaburaya16@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26433043"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "room",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get room by ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/room/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the room to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve a room by its ID."
+									},
+									"response": [
+										{
+											"name": "Room retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+										},
+										{
+											"name": "Room not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an existing room",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/room/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the room to be updated"
+												}
+											]
+										},
+										"description": "Update an existing room with the provided details."
+									},
+									"response": [
+										{
+											"name": "Room updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Room not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a room",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/room/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the room to be deleted"
+												}
+											]
+										},
+										"description": "Delete a room by its ID."
+									},
+									"response": [
+										{
+											"name": "Room deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Room not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "type",
+							"item": [
+								{
+									"name": "{roomType}",
+									"item": [
+										{
+											"name": "Get rooms by type",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/type/:roomType",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														"type",
+														":roomType"
+													],
+													"variable": [
+														{
+															"key": "roomType",
+															"value": "SINGLE",
+															"description": "(Required) Type of the rooms to be retrieved"
+														}
+													]
+												},
+												"description": "Retrieve rooms by their type."
+											},
+											"response": [
+												{
+													"name": "List of rooms retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/room/type/:roomType",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"room",
+																"type",
+																":roomType"
+															],
+															"variable": [
+																{
+																	"key": "roomType"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+												},
+												{
+													"name": "No rooms found with the specified type",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/room/type/:roomType",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"room",
+																"type",
+																":roomType"
+															],
+															"variable": [
+																{
+																	"key": "roomType"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "status",
+							"item": [
+								{
+									"name": "{status}",
+									"item": [
+										{
+											"name": "Get rooms by status",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/status/:status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														"status",
+														":status"
+													],
+													"variable": [
+														{
+															"key": "status",
+															"value": "AVAILABLE",
+															"description": "(Required) Status of the rooms to be retrieved"
+														}
+													]
+												},
+												"description": "Retrieve rooms by their status."
+											},
+											"response": [
+												{
+													"name": "List of rooms retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/room/status/:status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"room",
+																"status",
+																":status"
+															],
+															"variable": [
+																{
+																	"key": "status"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+												},
+												{
+													"name": "No rooms found with the specified status",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/room/status/:status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"room",
+																"status",
+																":status"
+															],
+															"variable": [
+																{
+																	"key": "status"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "capacity",
+							"item": [
+								{
+									"name": "Get rooms by capacity",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/room/capacity?capacity=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room",
+												"capacity"
+											],
+											"query": [
+												{
+													"key": "capacity",
+													"value": "<integer>",
+													"description": "(Required) Capacity of the rooms to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve rooms by their capacity."
+									},
+									"response": [
+										{
+											"name": "List of rooms retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/capacity?capacity=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														"capacity"
+													],
+													"query": [
+														{
+															"key": "capacity",
+															"value": "<integer>",
+															"description": "(Required) Capacity of the rooms to be retrieved"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+										},
+										{
+											"name": "No rooms found with the specified capacity",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/room/capacity?capacity=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"room",
+														"capacity"
+													],
+													"query": [
+														{
+															"key": "capacity",
+															"value": "<integer>",
+															"description": "(Required) Capacity of the rooms to be retrieved"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all rooms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/room",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"room"
+									]
+								},
+								"description": "Retrieve a list of all rooms."
+							},
+							"response": [
+								{
+									"name": "List of rooms retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/room",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create a new room",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/room",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"room"
+									]
+								},
+								"description": "Create a new room with the provided details."
+							},
+							"response": [
+								{
+									"name": "Room created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/room",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"capacity\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"price\": \"<number>\",\n  \"roomNumber\": \"<integer>\",\n  \"roomType\": \"SINGLE\",\n  \"status\": \"AVAILABLE\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"facilities\": \"<string>\",\n  \"features\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/room",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"room"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "reservation",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get reservation by ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the reservation to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve a reservation by its ID. Accessible by admin and customers."
+									},
+									"response": [
+										{
+											"name": "Reservation retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Reservation not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an existing reservation",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the reservation to be updated"
+												}
+											]
+										},
+										"description": "Update an existing reservation. Accessible by admin and customers."
+									},
+									"response": [
+										{
+											"name": "Reservation updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Reservation not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a reservation",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the reservation to be deleted"
+												}
+											]
+										},
+										"description": "Delete a reservation. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Reservation deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Reservation not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "status",
+							"item": [
+								{
+									"name": "{status}",
+									"item": [
+										{
+											"name": "Get reservations by status",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/status/:status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"status",
+														":status"
+													],
+													"variable": [
+														{
+															"key": "status",
+															"value": "CHECKED_IN",
+															"description": "(Required) Status of the reservations to be retrieved"
+														}
+													]
+												},
+												"description": "Retrieve reservations by status. Only accessible by admins."
+											},
+											"response": [
+												{
+													"name": "List of reservations retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/status/:status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"status",
+																":status"
+															],
+															"variable": [
+																{
+																	"key": "status"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+												},
+												{
+													"name": "Unauthorized access",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/status/:status",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"status",
+																":status"
+															],
+															"variable": [
+																{
+																	"key": "status"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "room",
+							"item": [
+								{
+									"name": "{roomId}",
+									"item": [
+										{
+											"name": "Get reservations by room ID",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/room/:roomId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"room",
+														":roomId"
+													],
+													"variable": [
+														{
+															"key": "roomId",
+															"value": "<long>",
+															"description": "(Required) ID of the room whose reservations are to be retrieved"
+														}
+													]
+												},
+												"description": "Retrieve reservations by room ID. Accessible by admin and customers."
+											},
+											"response": [
+												{
+													"name": "List of reservations retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/room/:roomId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"room",
+																":roomId"
+															],
+															"variable": [
+																{
+																	"key": "roomId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+												},
+												{
+													"name": "Unauthorized access",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/room/:roomId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"room",
+																":roomId"
+															],
+															"variable": [
+																{
+																	"key": "roomId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "customer",
+							"item": [
+								{
+									"name": "{customerId}",
+									"item": [
+										{
+											"name": "Get reservations by customer ID",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/customer/:customerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"customer",
+														":customerId"
+													],
+													"variable": [
+														{
+															"key": "customerId",
+															"value": "<long>",
+															"description": "(Required) ID of the customer whose reservations are to be retrieved"
+														}
+													]
+												},
+												"description": "Retrieve reservations by customer ID. Accessible by admin and customers."
+											},
+											"response": [
+												{
+													"name": "List of reservations retrieved successfully",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/customer/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"customer",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+												},
+												{
+													"name": "Unauthorized access",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/reservation/customer/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"reservation",
+																"customer",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "checkout",
+							"item": [
+								{
+									"name": "Get reservations by check-out date range",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation/checkout?startDate=<dateTime>&endDate=<dateTime>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation",
+												"checkout"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<dateTime>",
+													"description": "(Required) Start date of the check-out date range"
+												},
+												{
+													"key": "endDate",
+													"value": "<dateTime>",
+													"description": "(Required) End date of the check-out date range"
+												}
+											]
+										},
+										"description": "Retrieve reservations by check-out date range. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "List of reservations retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/checkout?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"checkout"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) Start date of the check-out date range"
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) End date of the check-out date range"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/checkout?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"checkout"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) Start date of the check-out date range"
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) End date of the check-out date range"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "checkin",
+							"item": [
+								{
+									"name": "Get reservations by check-in date range",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation/checkin?startDate=<dateTime>&endDate=<dateTime>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation",
+												"checkin"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "<dateTime>",
+													"description": "(Required) Start date of the check-in date range"
+												},
+												{
+													"key": "endDate",
+													"value": "<dateTime>",
+													"description": "(Required) End date of the check-in date range"
+												}
+											]
+										},
+										"description": "Retrieve reservations by check-in date range. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "List of reservations retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/checkin?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"checkin"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) Start date of the check-in date range"
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) End date of the check-in date range"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reservation/checkin?startDate=<dateTime>&endDate=<dateTime>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reservation",
+														"checkin"
+													],
+													"query": [
+														{
+															"key": "startDate",
+															"value": "<dateTime>",
+															"description": "(Required) Start date of the check-in date range"
+														},
+														{
+															"key": "endDate",
+															"value": "<dateTime>",
+															"description": "(Required) End date of the check-in date range"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all reservations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/reservation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reservation"
+									]
+								},
+								"description": "Retrieve a list of all reservations. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "List of reservations retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create a new reservation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reservation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reservation"
+									]
+								},
+								"description": "Create a new reservation. Accessible by admin and customers."
+							},
+							"response": [
+								{
+									"name": "Reservation created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkInDate\": \"<dateTime>\",\n  \"checkOutDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"customer\": {\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SUITE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"status\": \"CHECKED_OUT\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reservation",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reservation"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "housekeeping",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get housekeeping task by ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the housekeeping task to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve a housekeeping task by its ID. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Housekeeping task retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Housekeeping task not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update a housekeeping task",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the housekeeping task to be updated"
+												}
+											]
+										},
+										"description": "Update a housekeeping task. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Housekeeping task updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Housekeeping task not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a housekeeping task",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the housekeeping task to be deleted"
+												}
+											]
+										},
+										"description": "Delete a housekeeping task. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Housekeeping task deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Housekeeping task not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/housekeeping/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"housekeeping",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all housekeeping tasks",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/housekeeping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"housekeeping"
+									]
+								},
+								"description": "Retrieve a list of all housekeeping tasks. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "List of housekeeping tasks retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create a new housekeeping task",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/housekeeping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"housekeeping"
+									]
+								},
+								"description": "Create a new housekeeping task. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "Housekeeping task created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"employee\": {\n    \"address\": \"<string>\",\n    \"createdAt\": \"<dateTime>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"role\": \"<string>\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"room\": {\n    \"capacity\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"price\": \"<number>\",\n    \"roomNumber\": \"<integer>\",\n    \"roomType\": \"SINGLE\",\n    \"status\": \"MAINTENANCE\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"facilities\": \"<string>\",\n    \"features\": \"<string>\"\n  },\n  \"scheduleDate\": \"<dateTime>\",\n  \"status\": \"SCHEDULED\",\n  \"taskDescription\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/housekeeping",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"housekeeping"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get employee by ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/employee/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the employee to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve an employee by their ID. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Employee retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Employee not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an employee",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/employee/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the employee to be updated"
+												}
+											]
+										},
+										"description": "Update an employee by their ID. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Employee updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Employee not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete an employee",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/employee/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the employee to be deleted"
+												}
+											]
+										},
+										"description": "Delete an employee by their ID. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Employee deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Employee not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "Register a new employee",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/employee/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee",
+												"register"
+											]
+										},
+										"description": "Register a new employee. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Employee registered successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														"register"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														"register"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/employee/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"employee",
+														"register"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all employees",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employee",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employee"
+									]
+								},
+								"description": "Retrieve a list of all employees. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "List of employees retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/employee",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"address\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"role\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}"
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/employee",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"employee"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "billing",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get billing record by ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/billing/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the billing record to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve a billing record by its ID. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Billing record retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Billing record not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Update an existing billing record",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/billing/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the billing record to be updated"
+												}
+											]
+										},
+										"description": "Update an existing billing record. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Billing record updated successfully",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Billing record not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Delete a billing record",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/billing/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the billing record to be deleted"
+												}
+											]
+										},
+										"description": "Delete a billing record. Only accessible by admins."
+									},
+									"response": [
+										{
+											"name": "Billing record deleted successfully",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Billing record not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/billing/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"billing",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all billing records",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/billing",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"billing"
+									]
+								},
+								"description": "Retrieve a list of all billing records. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "List of billing records retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/billing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/billing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create a new billing record",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/billing",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"billing"
+									]
+								},
+								"description": "Create a new billing record. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "Billing record created successfully",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/billing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/billing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<number>\",\n  \"billingDate\": \"<dateTime>\",\n  \"createdAt\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"reservation\": {\n    \"checkInDate\": \"<dateTime>\",\n    \"checkOutDate\": \"<dateTime>\",\n    \"createdAt\": \"<dateTime>\",\n    \"customer\": {\n      \"createdAt\": \"<dateTime>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"password\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\"\n    },\n    \"room\": {\n      \"capacity\": \"<integer>\",\n      \"createdAt\": \"<dateTime>\",\n      \"price\": \"<number>\",\n      \"roomNumber\": \"<integer>\",\n      \"roomType\": \"SUITE\",\n      \"status\": \"RESERVED\",\n      \"updatedAt\": \"<dateTime>\",\n      \"id\": \"<long>\",\n      \"facilities\": \"<string>\",\n      \"features\": \"<string>\"\n    },\n    \"status\": \"CANCELLED\",\n    \"updatedAt\": \"<dateTime>\",\n    \"id\": \"<long>\"\n  },\n  \"updatedAt\": \"<dateTime>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/billing",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"billing"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "User login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"login"
+											]
+										},
+										"description": "Authenticate user and generate JWT token"
+									},
+									"response": [
+										{
+											"name": "User authenticated successfully and token generated",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/user/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"user",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accessToken\": \"<string>\"\n}"
+										},
+										{
+											"name": "Invalid user credentials",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/user/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"user",
+														"login"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "customer",
+					"item": [
+						{
+							"name": "register",
+							"item": [
+								{
+									"name": "Register a new customer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/customer/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer",
+												"register"
+											]
+										},
+										"description": "Register a new customer with the required details."
+									},
+									"response": [
+										{
+											"name": "Customer registered successfully",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"register"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Validation error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"createdAt\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"id\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"register"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "updatePhone",
+							"item": [
+								{
+									"name": "Update phone number",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/customer/updatePhone?id=<long>&newPhone=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer",
+												"updatePhone"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the customer"
+												},
+												{
+													"key": "newPhone",
+													"value": "<string>",
+													"description": "(Required) New phone number"
+												}
+											]
+										},
+										"description": "Update the phone number of the logged-in customer."
+									},
+									"response": [
+										{
+											"name": "Phone number updated successfully",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updatePhone?id=<long>&newPhone=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updatePhone"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newPhone",
+															"value": "<string>",
+															"description": "(Required) New phone number"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Validation error",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updatePhone?id=<long>&newPhone=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updatePhone"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newPhone",
+															"value": "<string>",
+															"description": "(Required) New phone number"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updatePhone?id=<long>&newPhone=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updatePhone"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newPhone",
+															"value": "<string>",
+															"description": "(Required) New phone number"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "updateEmail",
+							"item": [
+								{
+									"name": "Update email",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/customer/updateEmail?id=<long>&newEmail=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer",
+												"updateEmail"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the customer"
+												},
+												{
+													"key": "newEmail",
+													"value": "<string>",
+													"description": "(Required) New email address"
+												}
+											]
+										},
+										"description": "Update the email of the logged-in customer."
+									},
+									"response": [
+										{
+											"name": "Email updated successfully",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updateEmail?id=<long>&newEmail=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updateEmail"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newEmail",
+															"value": "<string>",
+															"description": "(Required) New email address"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Validation error",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updateEmail?id=<long>&newEmail=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updateEmail"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newEmail",
+															"value": "<string>",
+															"description": "(Required) New email address"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/updateEmail?id=<long>&newEmail=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"updateEmail"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "(Required) ID of the customer"
+														},
+														{
+															"key": "newEmail",
+															"value": "<string>",
+															"description": "(Required) New email address"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "changePassword",
+							"item": [
+								{
+									"name": "Change password",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<long>",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/customer/changePassword?currentPassword=<string>&newPassword=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer",
+												"changePassword"
+											],
+											"query": [
+												{
+													"key": "currentPassword",
+													"value": "<string>",
+													"description": "(Required) Current password"
+												},
+												{
+													"key": "newPassword",
+													"value": "<string>",
+													"description": "(Required) New password"
+												}
+											]
+										},
+										"description": "Change the password of the logged-in customer."
+									},
+									"response": [
+										{
+											"name": "Password changed successfully",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<long>",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/changePassword?currentPassword=<string>&newPassword=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"changePassword"
+													],
+													"query": [
+														{
+															"key": "currentPassword",
+															"value": "<string>",
+															"description": "(Required) Current password"
+														},
+														{
+															"key": "newPassword",
+															"value": "<string>",
+															"description": "(Required) New password"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Validation error",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<long>",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/changePassword?currentPassword=<string>&newPassword=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"changePassword"
+													],
+													"query": [
+														{
+															"key": "currentPassword",
+															"value": "<string>",
+															"description": "(Required) Current password"
+														},
+														{
+															"key": "newPassword",
+															"value": "<string>",
+															"description": "(Required) New password"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "<long>",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/changePassword?currentPassword=<string>&newPassword=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														"changePassword"
+													],
+													"query": [
+														{
+															"key": "currentPassword",
+															"value": "<string>",
+															"description": "(Required) Current password"
+														},
+														{
+															"key": "newPassword",
+															"value": "<string>",
+															"description": "(Required) New password"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get customer details",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/customer/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) ID of the customer to be retrieved"
+												}
+											]
+										},
+										"description": "Retrieve details of a specific customer by ID. Accessible by admins and the customer themselves."
+									},
+									"response": [
+										{
+											"name": "Customer details retrieved successfully",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}"
+										},
+										{
+											"name": "Unauthorized access",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Customer not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/customer/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"customer",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all customers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/customer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"customer"
+									]
+								},
+								"description": "Retrieve a list of all customers. Only accessible by admins."
+							},
+							"response": [
+								{
+									"name": "List of customers retrieved successfully",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/customer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"phoneNumber\": \"<string>\"\n}"
+								},
+								{
+									"name": "Unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/customer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"customer"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}
