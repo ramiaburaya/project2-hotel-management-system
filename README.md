@@ -16,7 +16,7 @@ This project is a comprehensive Hotel Management System developed using Spring B
 
 ### Student Names
 
-- Student 1: Rami Aburayya - 1201782
+- Student : Rami Aburayya - 1201782
 
 ## ER Diagram
 
@@ -58,6 +58,8 @@ To run the application:
 ### Building and Running with Docker
 
 To build and run the application as a Docker container:
+
+**Note**: The application depends on a MySQL database, so it must be run using Docker Compose to ensure the necessary dependencies are available.
 
 1. Build the Docker image:
     ```bash
@@ -111,7 +113,6 @@ To build and run the application along with MySQL using Docker Compose:
     docker-compose up
     ```
 
-**Note**: The application depends on a MySQL database, so it must be run using Docker Compose to ensure the necessary dependencies are available.
 
 ### DockerHub
 
@@ -121,13 +122,11 @@ The Docker image is available on DockerHub: [DockerHub Link](https://hub.docker.
 
 Through this project, we have gained valuable experience and knowledge in the following areas:
 
-1. **Spring Boot Framework**: Understanding the core concepts and components of Spring Boot.
-2. **RESTful API Development**: Designing and implementing RESTful web services.
-3. **Database Design**: Creating an ER diagram and designing a relational database schema.
-4. **JWT Authentication**: Implementing secure authentication and authorization using JWT.
-5. **Role-Based Access Control**: Managing user roles and permissions within the system.
-6. **Docker**: Containerizing the application and managing Docker images and containers.
-7. **API Documentation**: Generating and using OpenAPI/Swagger for API documentation.
-8. **Postman**: Creating and using Postman collections for API testing.
+1. **JWT Authentication**: Implementing secure authentication and authorization using JWT.
+2. **Role-Based Access Control**: Managing user roles and permissions within the system.
+3. **Docker**: Containerizing the application and managing Docker images and containers.
+4. **API Documentation**: Generating and using OpenAPI/Swagger for API documentation.
+5. **Postman**: Creating and using Postman collections for API testing.
 
-We hope this project serves as a solid foundation for further development and improvement in our understanding of web application development and software engineering principles.
+
+I hope this project serves as a solid foundation for further development and improvement in our understanding of web application development and software engineering principles.
