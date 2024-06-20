@@ -118,6 +118,10 @@ To build and run the application along with MySQL using Docker Compose:
 
 The Docker image is available on DockerHub: [DockerHub Link](https://hub.docker.com/r/ramiaburaya/hotel-management-app)
 
+### Swagger API Documentation
+
+he API documentation is available on SwaggerHub: [SwaggerHub Link](https://app.swaggerhub.com/apis-docs/RAMIABURAYA16/Hotel_Management_API/1.0.0)
+
 ## What We Have Learned
 
 Through this project, we have gained valuable experience and knowledge in the following areas:
