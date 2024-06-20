@@ -30,8 +30,8 @@ To build and package the application as a JAR file:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/ramiaburaya/project2-hotel-management-system.git
+    cd project2-hotel-management-system
     ```
 
 2. Build the project using Maven:
@@ -52,7 +52,7 @@ To run the application:
 
 2. Run the JAR file:
     ```bash
-    java -jar your-jar-file.jar
+    java -jar Hotel_1-0.0.1-SNAPSHOT.jar
     ```
 
 ### Building and Running with Docker
@@ -61,17 +61,61 @@ To build and run the application as a Docker container:
 
 1. Build the Docker image:
     ```bash
-    docker build -t your-dockerhub-username/hotel-management-system .
+    docker build -t ramiaburaya/hotel-management-app .
     ```
 
 2. Run the Docker container:
     ```bash
-    docker run -p 8080:8080 your-dockerhub-username/hotel-management-system
+    docker run -p 8080:8080 ramiaburaya/hotel-management-app
     ```
+
+### Using Docker Compose
+
+To build and run the application along with MySQL using Docker Compose:
+
+1. Create a `docker-compose.yml` file with the following content:
+
+    ```yaml
+    services:
+      mysql:
+        image: 'mysql:8'
+        container_name: 'hotelManG-mysql'
+        environment:
+          - 'MYSQL_ROOT_PASSWORD=root'
+          - 'MYSQL_DATABASE=hotel_management'
+          - 'MYSQL_PASSWORD=root'
+        ports:
+          - '127.0.0.1:3307:3306'
+        volumes:
+          - 'D:\Mysql\HotelManegment\docker\Mysql:/var/lib/mysql'
+        healthcheck:
+          test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+          interval: '30s'
+          timeout: '10s'
+          retries: 5
+      app:
+        image: ramiaburaya/hotel-management-app:latest
+        container_name: hotel_management_app
+        depends_on:
+          - mysql
+        environment:
+          SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/hotel_management
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: root
+        ports:
+          - '8080:8080'
+    ```
+
+2. Run Docker Compose:
+    ```bash
+    docker-compose up
+    ```
+
+**Note**: The application depends on a MySQL database, so it must be run using Docker Compose to ensure the necessary dependencies are available.
 
 ### DockerHub
 
-The Docker image is available on DockerHub: [DockerHub Link]((https://hub.docker.com/r/ramiaburaya/hotel-management-app))
+The Docker image is available on DockerHub: [DockerHub Link](https://hub.docker.com/r/ramiaburaya/hotel-management-app)
 
 ## What We Have Learned
 
